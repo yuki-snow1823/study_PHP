@@ -6,4 +6,4 @@ echo 'hello';
 */
 
 $name = "yuki";
-echo 'hello' . $name. PHP_EOL;;
+echo 'he\'llo' . "$name". PHP_EOL;;
