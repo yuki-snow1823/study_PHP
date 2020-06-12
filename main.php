@@ -40,7 +40,7 @@ echo var_dump(MAME);
 
 if (MAME == "azuki") {
   echo "if文";
-} elseif (MAME == "koshian") {
+} elseif (MAME !== "koshian") {
   "null";
 } else {
   "null";
