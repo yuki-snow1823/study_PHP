@@ -33,3 +33,7 @@ echo NAME . PHP_EOL;
 // もしくは
 const MAME = "azuki";
 echo MAME;
+
+echo var_dump(MAME);
+echo (string)MAME;
+echo var_dump(MAME);
