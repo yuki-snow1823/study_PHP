@@ -37,3 +37,11 @@ echo MAME;
 echo var_dump(MAME);
 echo (string)MAME;
 echo var_dump(MAME);
+
+if (MAME == "azuki") {
+  echo "if文";
+} elseif (MAME == "koshian") {
+  "null";
+} else {
+  "null";
+}
