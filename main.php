@@ -23,3 +23,13 @@ echo 13 * (3 + 5) + "3" . PHP_EOL ;; // スペースは必須 数字ではない
 
 $price = 500;
 echo $price += 100 ;// 改行がうまくいかない 
+
+
+// 定数
+define('NAME', 'taguchi');
+// define('NAME', 'dotinstall');
+echo NAME . PHP_EOL;
+
+// もしくは
+const MAME = "azuki";
+echo MAME;
