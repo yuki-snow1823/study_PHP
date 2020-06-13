@@ -100,3 +100,9 @@ function sum($a, $b, $c)
 }
 
 echo sum(100, 200, 300) + sum(300, 400, 500) . PHP_EOL; // 1944
+
+$goukei = function ($a,$b) { // 無名関数、クロージャー、値として扱うから関数を関数の引数にできる。
+ return $a + $b ;
+}; // 値として代入するなら;が必要
+
+echo $goukei(100,200);
