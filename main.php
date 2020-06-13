@@ -52,3 +52,9 @@ switch (MAME) {
     break;
   default: "wrong";
 }
+
+// jsと同じ
+for ($i = 1; $i <= 5; $i++) {
+  // echo 'Hello' . PHP_EOL;
+  echo "$i - Hello" . PHP_EOL;
+}
