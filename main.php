@@ -45,3 +45,10 @@ if (MAME == "azuki") {
 } else {
   "null";
 }
+
+switch (MAME) {
+  case  "azuki":
+    echo "小豆！！";
+    break;
+  default: "wrong";
+}
