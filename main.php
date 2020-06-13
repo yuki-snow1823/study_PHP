@@ -83,9 +83,9 @@ for ($i = 1; $i <= 10; $i++) {
 }
 
 
-function showAd($message) {
-  echo "------$message---";
+function showAd($message = "AD!") {
+  return "------$message---";
   echo "---------";
 }
 
-showAd("ooo");
+echo showAd("ooo");
