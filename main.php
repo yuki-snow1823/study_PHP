@@ -108,3 +108,12 @@ $goukei = function (bool $a,$b) { // 無名関数、クロージャー、値と�
 
 echo $goukei(100,200);
 // declare(strict_types=1);とすると型付
+
+$scores = [
+  90,
+  40,
+  100,
+];
+
+$scores[1] = 60;
+echo $scores[1] . PHP_EOL;
