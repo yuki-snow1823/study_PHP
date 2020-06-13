@@ -93,7 +93,7 @@ echo showAd("ooo");
 
 $rate = 1.1; // グローバルスコープ
 
-function sum(float $a, $b, $c):int
+function sum(float $a, $b, $c):?int // nullかint方と言う意味 
 {
   // global $rate; こうすれば回避できる。
   $rate = 1.08; // ローカルスコープ
