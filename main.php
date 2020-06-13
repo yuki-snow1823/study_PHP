@@ -1,4 +1,5 @@
 <?php
+
 echo 'こんにちは' . PHP_EOL; // 改行 EndOfLine
 
 /*
@@ -92,7 +93,7 @@ echo showAd("ooo");
 
 $rate = 1.1; // グローバルスコープ
 
-function sum($a, $b, $c)
+function sum(float $a, $b, $c):int
 {
   // global $rate; こうすれば回避できる。
   $rate = 1.08; // ローカルスコープ
@@ -101,8 +102,9 @@ function sum($a, $b, $c)
 
 echo sum(100, 200, 300) + sum(300, 400, 500) . PHP_EOL; // 1944
 
-$goukei = function ($a,$b) { // 無名関数、クロージャー、値として扱うから関数を関数の引数にできる。
+$goukei = function (bool $a,$b) { // 無名関数、クロージャー、値として扱うから関数を関数の引数にできる。
  return $a + $b ;
 }; // 値として代入するなら;が必要
 
 echo $goukei(100,200);
+// declare(strict_types=1);とすると型付
