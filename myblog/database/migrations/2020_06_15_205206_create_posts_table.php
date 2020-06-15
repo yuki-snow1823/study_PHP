@@ -13,6 +13,7 @@ class CreatePostsTable extends Migration
      */
     public function up()
     // やりたい処理
+    // newしてsaveで保存できる
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
