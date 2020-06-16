@@ -8,6 +8,7 @@ class PostsController extends Controller
 {
     //
     public function index() {
-      return "hello";
+        // 名前の指定
+      return view('posts.index');
     }
 }
