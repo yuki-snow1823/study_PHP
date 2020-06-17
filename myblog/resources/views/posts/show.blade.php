@@ -8,8 +8,8 @@
 <body>
   <div class="container">
     <h1>{{ $post->title }}</h1>
-    <!-- {{!!}}中身をエスケープしない -->
     <p>{!! nl2br(e($post->body)) !!}</p>
+    
   </div>
 </body>
 </html>
