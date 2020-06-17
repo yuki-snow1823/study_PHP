@@ -18,4 +18,11 @@ class PostsController extends Controller
     //   dd($posts->toArray());
       return view('posts.index',["posts"=>$posts]);
     }
+
+    public function show($id) {
+      // $post = Post::find($id);
+      // idがなかったら失敗
+      $post = Post::findOrFail($id);
+      return view('posts.show')->with('post', $post);
+    }
 }
