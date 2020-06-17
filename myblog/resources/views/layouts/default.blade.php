@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  {{-- タイトルの埋め込み -- }}
+  {{-- タイトルの埋め込み --}}
   <title>@yield('title')</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
