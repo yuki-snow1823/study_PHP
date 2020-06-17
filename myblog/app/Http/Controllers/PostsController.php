@@ -19,10 +19,11 @@ class PostsController extends Controller
       return view('posts.index',["posts"=>$posts]);
     }
 
-    public function show($id) {
+    // implisitbindingという、自動でidを引っ張ってくれる仕組み
+    public function show(Post $post) {
       // $post = Post::find($id);
       // idがなかったら失敗
-      $post = Post::findOrFail($id);
+    //   $post = Post::findOrFail($id);
       return view('posts.show')->with('post', $post);
     }
 }
