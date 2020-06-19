@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+  <p>共通部分が表示されています</p>
   <div class="container">
     @yield('content')
   </div>
