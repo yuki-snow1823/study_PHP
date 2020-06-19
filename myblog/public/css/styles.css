@@ -18,3 +18,9 @@ h1 {
 ul>li {
     margin-bottom: 5px;
 }
+
+.header-menu {
+    font-size: 12px;
+    font-weight: normal;
+    float: right;
+}
