@@ -35,3 +35,8 @@ textarea {
 textarea {
     height: 120px;
 }
+
+.error {
+    font-size: 12px;
+    color: tomato;
+}
