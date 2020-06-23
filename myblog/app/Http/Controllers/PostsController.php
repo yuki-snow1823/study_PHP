@@ -34,6 +34,7 @@ class PostsController extends Controller
     public function store(PostRequest $request) {
       $post = new Post();
       $post->title = $request->title;
+      // textareaのname属性と紐づいている
       $post->body = $request->body;
       $post->save();
       return redirect('/');
