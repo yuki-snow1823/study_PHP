@@ -8,7 +8,8 @@ use App\Comment;
 
 class CommentsController extends Controller
 {
-    public function store(Request $request, Post $post) {
+
+  public function store(Request $request, Post $post) {
     $this->validate($request, [
       'body' => 'required'
     ]);
@@ -16,4 +17,10 @@ class CommentsController extends Controller
     $post->comments()->save($comment);
     return redirect()->action('PostsController@show', $post);
   }
+
+  public function destroy(Post $post, Comment $comment) {
+    $comment->delete();
+    return redirect()->back();
+  }
+
 }
