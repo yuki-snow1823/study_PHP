@@ -44,6 +44,7 @@ class PostsController extends Controller
     }
 
     public function update(PostRequest $request, Post $post) {
+      // 関数の中でつかう宣言、宣言というか引数にしてるから使える
       $post->title = $request->title;
       $post->body = $request->body;
       $post->save();
