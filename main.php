@@ -11,8 +11,6 @@ echo 'hello';
 
 //   $text = <<<EOT
 //   hello! $name
-    this is looooong（字下げ）
-  text! 
   # EOTの文字はなんでもいい
   
   EOT;
