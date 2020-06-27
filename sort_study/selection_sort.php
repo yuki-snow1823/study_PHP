@@ -7,22 +7,29 @@ var_dump(selection_sort($numbers));
 
 function selection_sort($array)
 {
-  for($i = 0; $i < count($array); $i++)
+  // 最後に残る一個は比較するものがないから、総数-1回数行う
+  for($i = 0; $i < count($array)-1; $i++)
   {
-    $temp_minimum_number = $array[$i-1];
-    $first_number_position = $i;
+    // 一時的に先頭を暫定の最小値と設定
+    $temp_minimum_number = $array[$i];
+    // 先頭の位置を保存
+    $temp_minimum_number_position = $i;
     
-    for($j = 0; $j < count($array); $j++)
+    // 【最小値比較のアルゴリズム】
+    // 残っている要素と現在の数字を比較
+    for($j = $i+1; $j < count($array); $j++)
     {
       if($temp_minimum_number > $array[$j])
       {
+        // 暫定の最小値とその位置を更新
         $temp_minimum_number = $array[$j];
-        $first_number_position = $j;
+        $temp_minimum_number_position = $j;
       }
     }
-    $temp_number = $array[$first_number_position];
-    $array[$first_number_position] = $array[$j];
-    $array[$j] = $temp_number;
+    // 【本当の最小値と暫定の最小値を入れ替えるアルゴリズム】
+    $temp_number = $array[$temp_minimum_number_position];
+    $array[$temp_minimum_number_position] = $array[$i];
+    $array[$i] = $temp_number;
     }
     return $array;
 }
