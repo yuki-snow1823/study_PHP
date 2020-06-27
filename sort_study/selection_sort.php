@@ -7,12 +7,22 @@ var_dump(selection_sort($numbers));
 
 function selection_sort($array)
 {
-  $temp_minimum_number = min($array);
-    for($i = 0; $i <= count($array); $i++)
+  for($i = 0; $i < count($array); $i++)
+  {
+    $temp_minimum_number = $array[$i-1];
+    $first_number_position = $i;
+    
+    for($j = 0; $j < count($array); $j++)
     {
-      if($array[$i-1] > $minimum_number)
+      if($temp_minimum_number > $array[$j])
       {
-        $array[$i] = $minimum_number;
+        $temp_minimum_number = $array[$j];
+        $first_number_position = $j;
       }
-    }    // return $array;
+    }
+    $temp_number = $array[$first_number_position];
+    $array[$first_number_position] = $array[$j];
+    $array[$j] = $temp_number;
+    }
+    return $array;
 }
