@@ -1,6 +1,9 @@
 <?php
+// ヒープの作成
+// 元の値が書き変わる参照渡しを使用(&$array)
  function make_heap(&$array, $i, $t){
-  $tmp_var = $array[$i];    
+  $tmp_var = $array[$i];
+  // ? iは多分親のノードの番号jは子
   $j = $i * 2 + 1;
 
   while ($j <= $t)  {
@@ -21,14 +24,16 @@
 
  function heap_sort(&$array) {
   //This will heapify the array
+  // 整数に変換
   $init = (int)floor((count($array) - 1) / 2);
-  // Thanks jimHuang for bug report
+  // $iの初期値は、arrayの-1して/2した整数回数
+  // make_heapを繰り返すことで?
   for($i=$init; $i >= 0; $i--){
    $count = count($array) - 1;
    make_heap($array, $i, $count);
   }
 
-  //swaping of nodes
+  // ノードの入れ替え
   for ($i = (count($array) - 1); $i >= 1; $i--)  {
    $tmp_var = $array[0];
    $array [0] = $array [$i];
