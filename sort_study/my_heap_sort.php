@@ -1,6 +1,6 @@
 <?php
-
- function make_heap($array,$parent_node_index,$max_index) {
+// ヒープ構築のアルゴリズム
+ function make_heap(&$array,$parent_node_index,$max_index) {
    $parent_node_number = $array[$parent_node_index];
    while(true){
      $left_children_node_index = 2 * $parent_node_index + 1;
@@ -27,6 +27,24 @@
    }
  }
 
- function change_number(){
-   
+// ヒープ内で要素交換のアルゴリズム
+ function change_number(&$array,$first_node_index,$last_node_index){
+   $temp_number = $array[$first_node_index];
+   $array[$first_node_index] = $array[$last_node_index];
+   $array[$last_node_index] = $temp_number;
  }
+
+// ヒープソート
+ function heap_sort($array){
+	for($i = (int)floor((count($array) - 2) / 2); $i >= 0; $i--) {
+	    make_heap($array, $i, (count($array)) - 1);
+	}
+	for($i = (count($array)) - 1; $i > 0; $i--) {
+	    change_number($array,0, $i);
+	    make_heap($array,0, $i - 1);
+	}
+ }
+
+$array = array(9,8,11,6,4,5,3,2,1);
+heap_sort($array);
+print_r($array);
