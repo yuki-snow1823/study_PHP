@@ -1,8 +1,8 @@
 <?php
-// ヒープの作成のアルゴリズム（ソートするたびに呼び出される）
+// １回だけヒープを作成するアルゴリズム（ソートするたびに呼び出される）
 // ※元の値が書き変わる参照渡しを使用(&$array)
- function make_heap(&$array, $parent_node_index, $max_index){
-   // 親のノードの数字と子のインデックスを定義
+function make_heap(&$array, $parent_node_index, $max_index){
+  // 親のノードの数字と子のインデックスを定義
   $parent_number = $array[$parent_node_index];
   $left_children_node_index = $parent_node_index * 2 + 1;
 
@@ -21,16 +21,18 @@
    }
     // 親のノードの数字より、左の子のノードの数字が大きい場合
    if($parent_number < $array[$left_children_node_index]) {
-     // 親子を数字、インデックス共に入れ替える
+    // 親子を数字、インデックス共に入れ替える
     $array[$parent_node_index] = $array[$left_children_node_index];
     $parent_node_index = $left_children_node_index;
     $left_children_node_index = 2 * $parent_node_index + 1;
-    // ??
+    // 親のノードの数字が子のノードの数字より大きい場合（正しい場合）
    } else {
+    // ★子ノードのインデックスに、最大のインデックス+1の数字を入れる
     $left_children_node_index = $max_index + 1;
    }
   }
   // 配列の親のインデックスの位置に、親の数字を入れる
+  // これで元の配列の値が変わる
   $array[$parent_node_index] = $parent_number;
  }
 
@@ -40,21 +42,23 @@
   // 親ノードのインデックスは(配列の総数-1)/2で定義することができる
   $parent_node_index = (int)floor((count($array) - 1) / 2);
   // 全ての親の場合を行うため、$parent_node_indexを減らしていく
+  // まず、ヒープを作る！
   for($parent_node_index; $parent_node_index >= 0; $parent_node_index--){
     // 配列の最大のインデックスを第3引数として渡す
-    // 理由：make_heapで、最大のインデックスが子ノードのインデックスより小さくなるまで繰り返すから
+    // 理由：make_heapで、最大のインデックスが子ノードのインデックスより小さくなるまで繰り返せばヒープができるから
    $max_index = count($array) - 1;
    make_heap($array, $parent_node_index, $max_index);
   }
 
   // ノードの入れ替えのアルゴリズム
-  for ($last_node_index = (count($array) - 1); $last_node_index >= 1; $last_node_index--) {
-   // ??
-   $parent_number = $array[0];
+  for($last_node_index = (count($array) - 1); $last_node_index >= 1; $last_node_index--) {
+   // 一時避難
+   $temp_number = $array[0];
    // 配列の先頭は、一番下のノードの数字（根ノード）
    $array[0] = $array[$last_node_index];
    // 配列の最後尾は一番上のノードの数字
-   $array[$last_node_index] = $parent_number;
+   $array[$last_node_index] = $temp_number;
+   // 配列を動かしたら、それに応じてヒープを再構築させる
    make_heap($array, 0, $last_node_index - 1);
   }
  }

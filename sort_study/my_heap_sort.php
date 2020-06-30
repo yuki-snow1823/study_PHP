@@ -36,7 +36,11 @@
 
 // ヒープソート
  function heap_sort(&$array){
-
+   // ヒープにしてるっぽい
+	for($i = (int)floor((count($array) - 2) / 2); $i >= 0; $i--) {
+	    make_heap($array, $i, (count($array)) - 1);
+  }
+  // 並び替えてるっぽい
 	for($i = (count($array)) - 1; $i > 0; $i--) {
 	    change_number($array, 0, $i);
 	    make_heap($array, 0, $i - 1);
