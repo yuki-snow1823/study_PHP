@@ -59,6 +59,7 @@ function make_heap(&$array, $parent_node_index, $max_index){
    // 配列の最後尾は一番上のノードの数字
    $array[$last_node_index] = $temp_number;
    // 配列を動かしたら、それに応じてヒープを再構築させる
+   // ここのマイナス1が、多分重要
    make_heap($array, 0, $last_node_index - 1);
   }
  }
