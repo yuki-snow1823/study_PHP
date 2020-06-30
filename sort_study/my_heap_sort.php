@@ -35,13 +35,11 @@
  }
 
 // ヒープソート
- function heap_sort($array){
-	for($i = (int)floor((count($array) - 2) / 2); $i >= 0; $i--) {
-	    make_heap($array, $i, (count($array)) - 1);
-	}
+ function heap_sort(&$array){
+
 	for($i = (count($array)) - 1; $i > 0; $i--) {
-	    change_number($array,0, $i);
-	    make_heap($array,0, $i - 1);
+	    change_number($array, 0, $i);
+	    make_heap($array, 0, $i - 1);
 	}
  }
 
