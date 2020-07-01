@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     // 無名関数が表示のために引数に使われている
-    return view('welcome');
+    return view('home');
 });
