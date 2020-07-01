@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    // 無名関数が表示のために引数に使われている
     return view('welcome');
 });
