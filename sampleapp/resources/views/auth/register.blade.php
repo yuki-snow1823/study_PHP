@@ -1,5 +1,5 @@
 <html>
-
+{{-- composerは今後ファイルに入れる --}}
 <head>
     <meta charset='utf-8'>
 </head>
