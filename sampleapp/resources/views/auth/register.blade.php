@@ -8,6 +8,7 @@
     <h1>ユーザー登録フォーム</h1>
     <form name="registform" action="/auth/register" method="post">
         {{ csrf_field() }}
+        {{-- 対策 --}}
         名前：<input type="text" name="name" size="30">
         <span>{{ $errors->first('name') }}</span><br />
         メールアドレス：<input type="text" name="email" size="30">
