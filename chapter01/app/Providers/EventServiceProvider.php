@@ -16,7 +16,7 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\Event' => [
             'App\Listeners\EventListener',
         ],
-        // 会員登録イベントのリスナーを発行（追加）
+        // 会員登録イベントのリスナーを発行（追加）ここでイベントが発行される
         'Illuminate\Auth\Events\Registered' => [
             'App\Listeners\RegisteredListener',
         ],
