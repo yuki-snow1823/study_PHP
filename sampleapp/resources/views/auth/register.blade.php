@@ -1,5 +1,6 @@
 <html>
 {{-- composerは今後ファイルに入れる --}}
+
 <head>
     <meta charset='utf-8'>
 </head>
@@ -17,8 +18,8 @@
         <span>{{ $errors->first('password') }}</span><br />
         パスワード（確認）：<input type="password" name="password_confirmation" size="30">
         <span>{{ $errors->first('password_confirmation') }}</span><br />
-
         <button type='submit' name='action' value='send'>送信</button>
+        {{-- mysqlserverが立っていないと送信できないから注意 --}}
     </form>
 </body>
 
