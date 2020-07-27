@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // バインド、使えるようにしている
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
     }
 }
