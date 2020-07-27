@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Purchase;
+// ここでDI
 use App\Service\UserService;
 use App\Service\BookReviewService;
 use Illuminate\Contracts\View\View;
