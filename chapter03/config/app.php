@@ -175,6 +175,7 @@ return [
 
     'aliases' => [
 // ファサードと呼ばれるもの
+// Config::　とかで呼び出せるようになる
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
