@@ -23,9 +23,10 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
+    // ここが最初
     public function register()
     {
-        // バインド、使えるようにしている
+        // その次がここ。バインド、使えるようにしている
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
     }
 }
