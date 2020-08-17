@@ -1,4 +1,5 @@
 <?php
+// 認証に使われれる
 
 namespace App;
 
