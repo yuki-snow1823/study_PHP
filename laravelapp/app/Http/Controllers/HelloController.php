@@ -7,9 +7,10 @@ use Illuminate\Http\Response;
 
 class HelloController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('hello.index', ['message'=>'Hello!']);
+        // middlewareを通過してくるから、値がとれると思われる
+        return view('hello.index', ['data'=>$request->data]);
     }
 
     public function post(Request $request)
