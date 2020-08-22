@@ -9,10 +9,7 @@ class HelloController extends Controller
 {
     public function index()
     {
-        $data = [
-           'msg'=>'お名前を入力下さい。',
-       ];
-        return view('hello.index', $data);
+        return view('hello.index', ['message'=>'Hello!']);
     }
 
     public function post(Request $request)
@@ -21,7 +18,7 @@ class HelloController extends Controller
         $data = [
            'msg'=>'こんにちは、' . $msg . 'さん！',
        ];
-       // 送りつつindexのviewにいく
+        // 送りつつindexのviewにいく
         return view('hello.index', $data);
     }
 }
