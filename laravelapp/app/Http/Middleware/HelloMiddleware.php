@@ -4,18 +4,16 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class HelloMiddleware // 何も継承していない
+class HelloMiddleware
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
-     */
-    public function handle($request, Closure $next) // Closureは無名クラスを扱うもの
+    public function handle($request, Closure $next)
     {
-        // クロージャーでリクエストを呼び出すことで、ミドルウェアとしての役割を行うことができる
+        $data = [
+            ['name'=>'taro', 'mail'=>'taro@yamada'],
+            ['name'=>'hanako', 'mail'=>'hanako@flower'],
+            ['name'=>'sachiko', 'mail'=>'sachico@happy'],
+        ];
+        $request->merge(['data'=>$data]);
         return $next($request);
     }
 }
