@@ -6,13 +6,11 @@ use Illuminate\Support\ServiceProvider;
 
 class HelloServiceProvider extends ServiceProvider // 拡張している
 {
-    public function boot() // bootに書くパターン
+    public function boot()
     {
-        View::composer( //ビューコンポーザーの作成
+        View::composer(
             'hello.index',
-            function ($view) {
-               $view->with('view_message', 'composer message!');
-           }
+            'App\Http\Composers\HelloComposer'
         );
     }
 }
