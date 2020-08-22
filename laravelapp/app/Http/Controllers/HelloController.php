@@ -9,8 +9,7 @@ class HelloController extends Controller
 {
     public function index(Request $request)
     {
-        // middlewareを通過してくるから、値がとれると思われる
-        return view('hello.index', ['data'=>$request->data]);
+        return view('hello.index');
     }
 
     public function post(Request $request)
