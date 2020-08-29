@@ -1,4 +1,4 @@
-<?php
+<?php // DBを司どる
 
 use Illuminate\Support\Str;
 
@@ -15,7 +15,8 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'sqlite'),
+    // DBの変更
 
     /*
     |--------------------------------------------------------------------------
@@ -35,7 +36,7 @@ return [
 
     'connections' => [
 
-        'sqlite' => [
+        'sqlite' => [ // DBの情報登録
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
