@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Requests\HelloRequest;
 use Illuminate\Support\Facades\Log;
-
+use Illuminate\Support\Facades\DB;
 use Validator;
 
 class HelloController extends Controller
@@ -14,18 +14,10 @@ class HelloController extends Controller
   
 public function index(Request $request)
 {
-   Log::warning($request);
-   $validator = Validator::make($request->query(), [
-       'id' => 'required',
-       'pass' => 'required',
-   ]);
-   if ($validator->fails()) {
-       $msg = 'クエリーに問題があります。';
-   } else {
-       $msg = 'ID/PASSを受け付けました。フォームを入力下さい。';
-   }
-   return view('hello.index', ['msg'=>$msg, ]);
+   $items = DB::select('select * from people'); //クエリを直接かける
+   return view('hello.index', ['items' => $items]);
 }
+
 
 
 public function post(Request $request)
