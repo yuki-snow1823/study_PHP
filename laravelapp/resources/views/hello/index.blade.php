@@ -1,7 +1,7 @@
 @extends('layouts.helloapp')
 
 @section('title', 'Index')
-
+!
 @section('menubar')
    @parent
    {{-- 親の要素も表示したい --}}
