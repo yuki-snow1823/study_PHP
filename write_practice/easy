@@ -1,0 +1,10 @@
+<!-- 奇数偶数の判定 -->
+<?php
+    $input_line = fgets(STDIN);
+    
+    if ($input_line % 2 == 0) {
+        echo "even";
+      }else{
+        echo "odd";
+    }
+?>
